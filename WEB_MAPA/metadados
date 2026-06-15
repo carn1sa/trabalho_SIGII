@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 25.8.6.2 (Windows)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="2026-06-15T16:03:17.377058400"/>
+	
+	<style type="text/css">
+		body,div,table,thead,tbody,tfoot,tr,th,td,p { font-family:"Liberation Sans"; font-size:x-small }
+		a.comment-indicator:hover + comment { background:#ffd; position:absolute; display:block; border:1px solid black; padding:0.5em;  } 
+		a.comment-indicator { background:red; display:inline-block; border:1px solid black; width:0.5em; height:0.5em;  } 
+		comment { display:none;  } 
+	</style>
+	
+</head>
+
+<body>
+<table cellspacing="0" border="0">
+	<colgroup width="259"></colgroup>
+	<colgroup width="303"></colgroup>
+	<colgroup width="310"></colgroup>
+	<colgroup width="372"></colgroup>
+	<colgroup width="2740"></colgroup>
+	<colgroup width="105"></colgroup>
+	<colgroup width="183"></colgroup>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;arquivo&quot;}">arquivo</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;title&quot;}">title</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;nome da camada&quot;}">nome da camada</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;parentidentifier&quot;}">parentidentifier</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;abstract&quot;}">abstract</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;organization&quot;}">organization</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;author&quot;}">author</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DEM_SAMBAQUI.qmd&quot;}">DEM_SAMBAQUI.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Dem_sambaqui&quot;}">Dem_sambaqui</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;DEM_sambaqui&quot;}">DEM_sambaqui</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Modelo Digital de Elevação&quot;}">Modelo Digital de Elevação</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Modelo Digital de Elevação adiquirido através do processamento de dados Lidar realizados pelo Laboratório de Geoprocessamento e Análise Ambiental (LAGEAMB) em colaboração com o Centro de Estudos e Pesquisas Arqueológicas (CEPA-UFPR).&quot;}">Modelo Digital de Elevação adiquirido através do processamento de dados Lidar realizados pelo Laboratório de Geoprocessamento e Análise Ambiental (LAGEAMB) em colaboração com o Centro de Estudos e Pesquisas Arqueológicas (CEPA-UFPR).</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LAGEAMB&quot;}">LAGEAMB</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não consta&quot;}">Não consta</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Landsat9.qmd&quot;}">Landsat9.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NDVI_LANDSAT9_2025&quot;}">NDVI_LANDSAT9_2025</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;NDVI_LANDSAT2025&quot;}">NDVI_LANDSAT2025</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Índice de Vegetação por Diferença Normalizada&quot;}">Índice de Vegetação por Diferença Normalizada</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Índice de Vegetação por diferença Normalizada obtido através do satélite Landsat9.&quot;}">Índice de Vegetação por diferença Normalizada obtido através do satélite Landsat9.</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;UFPR&quot;}">UFPR</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Isadora Martins Vidotti&quot;}">Isadora Martins Vidotti</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Mapa_de_Solos_do_Parana.qmd&quot;}">Mapa_de_Solos_do_Parana.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Mapa_de_Solos_do_Paran_EMBRAPA&quot;}">Mapa_de_Solos_do_Paran_EMBRAPA</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Mapa de Solos do Paraná EMBRAPA&quot;}">Mapa de Solos do Paraná EMBRAPA</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Mapa de solos do Paraná&quot;}">Mapa de solos do Paraná</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Este plano de informação representa a distribuição espacial dos solos do estado do Paraná de acordo com Sistema Brasileiro de Classificação de Solos (SiBCS, 2006). Escala: 1:250.000.&quot;}">Este plano de informação representa a distribuição espacial dos solos do estado do Paraná de acordo com Sistema Brasileiro de Classificação de Solos (SiBCS, 2006). Escala: 1:250.000.</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;EMBRAPA&quot;}">EMBRAPA</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não consta&quot;}">Não consta</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;indicederugosidade.qmd&quot;}">indicederugosidade.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;indicederugosidade&quot;}">indicederugosidade</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Indice de Rugosidade&quot;}">Indice de Rugosidade</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Indice de Rugosidade&quot;}">Indice de Rugosidade</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Indice de rugosidade elaborado através do DEM proveniente do Laboratório de Geoprocessamento e Estudos Ambientais.&quot;}">Indice de rugosidade elaborado através do DEM proveniente do Laboratório de Geoprocessamento e Estudos Ambientais.</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;LAGEAMB&quot;}">LAGEAMB</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Isadora Martins Vidotti&quot;}">Isadora Martins Vidotti</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;pontos_amostrais.qmd&quot;}">pontos_amostrais.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;pontos_amostrais&quot;}">pontos_amostrais</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Pontos Amostrais&quot;}">Pontos Amostrais</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;pontos amostrais&quot;}">pontos amostrais</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Dado de amostra para elaboração do dado de suscetibilidade_erosiva a partir da metodologia de Amaro et al. 2021. \n\n Referências:\nAMARO, Venerando Eustáquio; CARVALHO, Ricardo Carlos; MATOS, Maria de Fátima Alves de; INGUNZA, Maria Del Pilar Durante; SCUDELARI, Ada Cristina. AVALIAÇÃO DA SUSCETIBILIDADE DO SOLO À EROSÃO NAS FALÉSIAS DO LITORAL ORIENTAL DO ESTADO DO RIO GRANDE DO NORTE. Revista Brasileira de Geomorfologia, [S. l.], v. 22, n. 1, 2021. DOI: 10.20502\/rbg.v22i1.1887. Disponível em: https:\/\/rbgeomorfologia.org.br\/rbg\/article\/view\/1887. Acesso em: 14 jun. 2026.&quot;}">Dado de amostra para elaboração do dado de suscetibilidade_erosiva a partir da metodologia de Amaro et al. 2021. <br><br> Referências:<br>AMARO, Venerando Eustáquio; CARVALHO, Ricardo Carlos; MATOS, Maria de Fátima Alves de; INGUNZA, Maria Del Pilar Durante; SCUDELARI, Ada Cristina. AVALIAÇÃO DA SUSCETIBILIDADE DO SOLO À EROSÃO NAS FALÉSIAS DO LITORAL ORIENTAL DO ESTADO DO RIO GRANDE DO NORTE. Revista Brasileira de Geomorfologia, [S. l.], v. 22, n. 1, 2021. DOI: 10.20502/rbg.v22i1.1887. Disponível em: https://rbgeomorfologia.org.br/rbg/article/view/1887. Acesso em: 14 jun. 2026.</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;UFPR&quot;}">UFPR</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Isadora Martins Vidotti&quot;}">Isadora Martins Vidotti</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;sitios_arqueologicos_PR.qmd&quot;}">sitios_arqueologicos_PR.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;sitios_arqueologicos&quot;}">sitios_arqueologicos</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Outros Sítios Arqueológicos do Paraná &quot;}">Outros Sítios Arqueológicos do Paraná </td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;sitios_arqueológicos&quot;}">sitios_arqueológicos</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Sitios arqueológicos presentes no estado do Paraná. O dado se dá por dados vetoriais em formato de poligno.&quot;}">Sitios arqueológicos presentes no estado do Paraná. O dado se dá por dados vetoriais em formato de poligno.</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;IPHAN&quot;}">IPHAN</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Não consta&quot;}">Não consta</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;suscetibilidade_erosiva.qmd&quot;}">suscetibilidade_erosiva.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;suscetibidade_erosiva&quot;}">suscetibidade_erosiva</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Suscetibilidade Erosiva&quot;}">Suscetibilidade Erosiva</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Suscetibilidade erosiva&quot;}">Suscetibilidade erosiva</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Dado gerado a partir da metodologia de Amaro et al (2021).&quot;}">Dado gerado a partir da metodologia de Amaro et al (2021).</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;UFPR&quot;}">UFPR</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Isadora Martins Vidotti&quot;}">Isadora Martins Vidotti</td>
+	</tr>
+	<tr>
+		<td height="21" align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;uso_do_solo.qmd&quot;}">uso_do_solo.qmd</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;uso_do_solo&quot;}">uso_do_solo</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Uso do Solo&quot;}">Uso do Solo</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Uso do Solo&quot;}">Uso do Solo</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Uso do solo vetorizado, adquirido a partir do satélite Santnel2.&quot;}">Uso do solo vetorizado, adquirido a partir do satélite Santnel2.</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;UFPR&quot;}">UFPR</td>
+		<td align="left" data-sheets-value="{ &quot;1&quot;: 2, &quot;2&quot;: &quot;Isadora Martins Vidotti&quot;}">Isadora Martins Vidotti</td>
+	</tr>
+</table>
+<!-- ************************************************************************** -->
+</body>
+
+</html>
