@@ -1,0 +1,54 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.40.15-Bratislava">
+  <identifier>Munic_pios_2024</identifier>
+  <parentidentifier>https://geopr.iat.pr.gov.br/portal/home/item.html?id=e35a44e4c88b4e65b2c3fc7fedbe87bc</parentidentifier>
+  <language>pt</language>
+  <type>dataset</type>
+  <title>
+Limites Político-Administrativos de 2024 da Base Cartográfica do IAT</title>
+  <abstract>Dados de divisas municipais base para o cálculo das áreas dos municípios paranaenses. O dado retrata a situação vigente no período da divisão político-administrativa do Estado do Paraná, através da representação vetorial das linhas definidoras das divisas municipais e estaduais. A sua elaboração utilizou como fonte de referência e consulta o Arquivo Gráfico Municipal – AGM constituído por diversos documentos cartográficos e legais. As bases cartográficas utilizadas foram do Mapeamento Sistemático do Estado na escala 1:50.000. No dado originalmente elaborado pelo IAT utilizou-se para o cálculo das áreas oficiais o sistema de projeção cilíndrica equivalente, o qual tem como característica a manutenção das áreas – coeficiente de deformação de área nulo. Os parâmetros utilizados foram: 1) Projeção Cilíndrica Equivalente; 2) South American Datum 1969 (SAD69); 3) Elipsóide de Referência de 1967; 4) Meridiano Central -51° 30’ e Paralelo Padrão -24° 45’; 5) Unidade de medida do sistema métrico. Porém, os arquivos disponibilizados na GeoPR passaram por adequações, tais como, reprojeção para SIRGAS 2000. Para mais informações acesse: http://www.iat.pr.gov.br/Pagina/Dados-geoespaciais-de-referencia Devido à indisponibilidade de metadados originais que expliquem os dados os mesmos foram elaborados remetendo-se ao único vínculo imediatamente anterior conhecido: o Instituto de Terras, Cartografia e Geologia (ITCG).
+
+Referência:
+PARANÁ. Instituto Água e Terra (IAT). GeoPR: Portal de Informações Geoespaciais do Paraná. Curitiba: IAT, [s.d.]. Disponível em: GeoPR – Item. Acesso em: 14 jun. 2026. </abstract>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>limites</keyword>
+  </keywords>
+  <contact>
+    <name>Instituto Água e Terra (IAT)</name>
+    <organization></organization>
+    <position></position>
+    <voice></voice>
+    <fax></fax>
+    <email></email>
+    <role></role>
+  </contact>
+  <links>
+    <link format="" type="" size="" description="" mimeType="" name="Aceso" url="https://geopr.iat.pr.gov.br/server/rest/services/00_PUBLICACOES/municipios_2024/FeatureServer"/>
+  </links>
+  <dates/>
+  <fees></fees>
+  <rights>PARANÁ. Instituto Água e Terra (IAT)</rights>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt>GEOGCRS["SIRGAS 2000",DATUM["Sistema de Referencia Geocentrico para las AmericaS 2000",ELLIPSOID["GRS 1980",6378137,298.257222101,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["Latin America - Central America and South America - onshore and offshore. Brazil - onshore and offshore."],BBOX[-59.87,-122.19,32.72,-25.28]],ID["EPSG",4674]]</wkt>
+      <proj4>+proj=longlat +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +no_defs</proj4>
+      <srsid>3517</srsid>
+      <srid>4674</srid>
+      <authid>EPSG:4674</authid>
+      <description>SIRGAS 2000</description>
+      <projectionacronym>longlat</projectionacronym>
+      <ellipsoidacronym>EPSG:7019</ellipsoidacronym>
+      <geographicflag>true</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent>
+    <spatial dimensions="2" crs="EPSG:4674" miny="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxz="0" minx="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxx="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxy="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" minz="0"/>
+    <temporal>
+      <period>
+        <start></start>
+        <end></end>
+      </period>
+    </temporal>
+  </extent>
+</qgis>
