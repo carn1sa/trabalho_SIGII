@@ -1,111 +1,125 @@
-<script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa Interativo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+        }
+        #map {
+            flex: 1;
+        }
+        #painel {
+            width: 300px;
+            background: #f5f5f5;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        #descricao-projeto {
+            display: none;
+        }
+        #abrir-metadados {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
 
-function fecharMetadados(){
+    <div id="map"></div>
 
-    document.getElementById('descricao-projeto').style.display = 'none';
+    <div id="painel">
+        <div id="abrir-metadados" onclick="abrirMetadados()">Abrir Metadados</div>
+        <div id="descricao-projeto">
+            <button onclick="fecharMetadados()">Fechar</button>
+            <div id="texto-camada"></div>
+        </div>
 
-    document.getElementById('abrir-metadados').style.display = 'block';
-}
+        <h3>Camadas</h3>
+        <ul>
+            <li><button onclick="atualizarDescricao('Uso do Solo')">Uso do Solo</button></li>
+            <li><button onclick="atualizarDescricao('Suscetibilidade Erosiva')">Suscetibilidade Erosiva</button></li>
+            <li><button onclick="atualizarDescricao('Outros Sítios Arqueológicos do Paraná')">Sítios Arqueológicos</button></li>
+        </ul>
+    </div>
 
-function abrirMetadados(){
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Inicializa o mapa
+        const map = L.map('map').setView([-25.4284, -49.2733], 7);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
 
-    document.getElementById('descricao-projeto').style.display = 'block';
+        // Funções de metadados
+        function fecharMetadados(){
+            document.getElementById('descricao-projeto').style.display = 'none';
+            document.getElementById('abrir-metadados').style.display = 'block';
+        }
 
-    document.getElementById('abrir-metadados').style.display = 'none';
-}
+        function abrirMetadados(){
+            document.getElementById('descricao-projeto').style.display = 'block';
+            document.getElementById('abrir-metadados').style.display = 'none';
+        }
 
-function atualizarDescricao(nomeCamada){
+        function atualizarDescricao(nomeCamada){
+            const texto = document.getElementById('texto-camada');
+            switch(nomeCamada){
+                case 'Uso do Solo':
+                    texto.innerHTML = `
+                        <strong>Camada:</strong> Uso do Solo<br><br>
+                        <strong>Resumo</strong><br>
+                        Uso do solo vetorizado obtido a partir de imagens Sentinel-2.<br><br>
+                        <strong>Categoria</strong><br>
+                        Mapas Base de Imagens de Cobertura da Terra.<br><br>
+                        <strong>Responsável</strong><br>
+                        Isadora Martins Vidotti – UFPR.
+                    `;
+                    break;
+                case 'Suscetibilidade Erosiva':
+                    texto.innerHTML = `
+                        <strong>Camada:</strong> Suscetibilidade Erosiva<br><br>
+                        <strong>Resumo</strong><br>
+                        Dado gerado a partir da metodologia proposta por Amaro et al. (2021).<br><br>
+                        <strong>Categoria</strong><br>
+                        Informação Geocientífica.<br><br>
+                        <strong>Sistema de Referência</strong><br>
+                        SIRGAS 2000 / UTM Zona 22S (EPSG:31982).<br><br>
+                        <strong>Responsável</strong><br>
+                        Isadora Martins Vidotti – UFPR.
+                    `;
+                    break;
+                case 'Outros Sítios Arqueológicos do Paraná':
+                    texto.innerHTML = `
+                        <strong>Camada:</strong> Sítios Arqueológicos do Paraná<br><br>
+                        <strong>Resumo</strong><br>
+                        Sítios arqueológicos localizados no estado do Paraná, representados por dados vetoriais poligonais.<br><br>
+                        <strong>Tema</strong><br>
+                        Arqueologia.<br><br>
+                        <strong>Categoria</strong><br>
+                        Informação Geocientífica.<br><br>
+                        <strong>Fonte</strong><br>
+                        Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN).<br><br>
+                        <strong>Direitos</strong><br>
+                        Dados disponibilizados pelo Banco de Dados do Patrimônio Arqueológico do IPHAN.<br><br>
+                        <strong>Sistema de Referência</strong><br>
+                        SIRGAS 2000 (EPSG:4674).
+                    `;
+                    break;
+                default:
+                    texto.innerHTML = `Selecione uma camada no painel lateral para visualizar seus metadados.`;
+            }
+        }
 
-    const texto = document.getElementById('texto-camada');
-
-    switch(nomeCamada){
-
-        case 'Uso do Solo':
-
-            texto.innerHTML = `
-                <strong>Camada:</strong> Uso do Solo
-                <br><br>
-
-                <strong>Resumo</strong><br>
-                Uso do solo vetorizado obtido a partir de imagens Sentinel-2.
-                <br><br>
-
-                <strong>Categoria</strong><br>
-                Mapas Base de Imagens de Cobertura da Terra.
-                <br><br>
-
-                <strong>Responsável</strong><br>
-                Isadora Martins Vidotti – UFPR.
-            `;
-            break;
-
-
-        case 'Suscetibilidade Erosiva':
-
-            texto.innerHTML = `
-                <strong>Camada:</strong> Suscetibilidade Erosiva
-                <br><br>
-
-                <strong>Resumo</strong><br>
-                Dado gerado a partir da metodologia proposta por Amaro et al. (2021).
-                <br><br>
-
-                <strong>Categoria</strong><br>
-                Informação Geocientífica.
-                <br><br>
-
-                <strong>Sistema de Referência</strong><br>
-                SIRGAS 2000 / UTM Zona 22S (EPSG:31982).
-                <br><br>
-
-                <strong>Responsável</strong><br>
-                Isadora Martins Vidotti – UFPR.
-            `;
-            break;
-
-
-        case 'Outros Sítios Arqueológicos do Paraná':
-
-            texto.innerHTML = `
-                <strong>Camada:</strong> Sítios Arqueológicos do Paraná
-                <br><br>
-
-                <strong>Resumo</strong><br>
-                Sítios arqueológicos localizados no estado do Paraná, representados por dados vetoriais poligonais.
-                <br><br>
-
-                <strong>Tema</strong><br>
-                Arqueologia.
-                <br><br>
-
-                <strong>Categoria</strong><br>
-                Informação Geocientífica.
-                <br><br>
-
-                <strong>Fonte</strong><br>
-                Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN).
-                <br><br>
-
-                <strong>Direitos</strong><br>
-                Dados disponibilizados pelo Banco de Dados do Patrimônio Arqueológico do IPHAN.
-                <br><br>
-
-                <strong>Sistema de Referência</strong><br>
-                SIRGAS 2000 (EPSG:4674).
-            `;
-            break;
-
-
-        default:
-
-            texto.innerHTML = `
-                Selecione uma camada no painel lateral para visualizar seus metadados.
-            `;
-    }
-}
-
-window.onload = function(){
-    atualizarDescricao('Suscetibilidade Erosiva');
-};
-
-</script>
+        window.onload = function(){
+            atualizarDescricao('Suscetibilidade Erosiva');
+            abrirMetadados();
+        };
+    </script>
+</body>
+</html>
