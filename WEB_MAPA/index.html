@@ -158,5 +158,64 @@
     <script src="resources/olms.js"></script>
     <script src="layers/MapadeSolosdoParanEMBRAPA_1.js"></script>
     <script src="layers/UsodoSolo_6.js"></script>
+<!-- Painel lateral de descrição + metadados + legenda -->
+<div id="descricao-projeto">
+    <button onclick="fecharDescricao()"
+            style="float:right;border:none;background:none;font-size:16px;cursor:pointer;">
+        ×
+    </button>
+
+    <strong>Aspectos do Sambaqui do Rio Branco</strong><br><br>
+    Discente: Isadora Martins Vidotti<br>
+    Disciplina: SIG2<br>
+    Docente: Catherine Torres de Almeida<br>
+    Curso: Graduação em Geografia<br>
+    Instituição: UFPR
+
+    <hr>
+    <h3>Metadados das camadas</h3>
+    <!-- tabela de metadados já incluída -->
+    <div id="tabela-metadados">…</div>
+
+    <hr>
+    <h3>Legenda</h3>
+    <div id="legenda">
+        <ul>
+            <li><b>Pontos Amostrais</b></li>
+            <li><b>Sítios Arqueológicos</b></li>
+            <li><b>Uso do Solo</b>
+                <ul>
+                    <li>Rodovia / Solo exposto</li>
+                    <li>Área cultivada</li>
+                    <li>Vegetação</li>
+                </ul>
+            </li>
+            <li><b>Suscetibilidade Erosiva</b>
+                <ul>
+                    <li>0%</li>
+                    <li>2.1%</li>
+                    <li>4.3%</li>
+                    <li>6.4%</li>
+                    <li>8.6%</li>
+                </ul>
+            </li>
+            <li><b>Índice de Rugosidade</b> (0.0486 – 45.21)</li>
+            <li><b>DEM_sambaqui</b></li>
+            <li><b>NDVI_LANDSAT9_2025</b> (0.0000 – 0.9130)</li>
+            <li><b>Mapa de Solos do Paraná (EMBRAPA)</b>
+                <ul>
+                    <li>Aflorescimento Rochoso</li>
+                    <li>Aflorescimento de Rocha</li>
+                    <li>Argissolo</li>
+                    <li>Cambissolo</li>
+                    <li>Espodossolo</li>
+                    <li>Gleissolo</li>
+                    <li>Latosssolo</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
     <script src="layers/OutrosStiosArqueolgicosdoParan_7.js"></script>
     <script src="layers/PontosAmostrais_8.js"></script
