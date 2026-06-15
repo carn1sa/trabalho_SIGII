@@ -79,7 +79,51 @@
         <td>EMBRAPA</td>
         <td>Não consta</td>
       </tr>
-      <!-- continue preenchendo as demais linhas -->
+      <tr>
+        <td>indicederugosidade.qmd</td>
+        <td>indicederugosidade</td>
+        <td>Indice de Rugosidade</td>
+        <td>Indice de Rugosidade</td>
+        <td>Indice de rugosidade elaborado através do DEM proveniente do Laboratório de Geoprocessamento e Estudos Ambientais.</td>
+        <td>LAGEAMB</td>
+        <td>Isadora Martins Vidotti</td>
+      </tr>
+      <tr>
+        <td>pontos_amostrais.qmd</td>
+        <td>pontos_amostrais</td>
+        <td>Pontos Amostrais</td>
+        <td>pontos amostrais</td>
+        <td>Dado de amostra para elaboração do dado de suscetibilidade erosiva a partir da metodologia de Amaro et al. 2021.</td>
+        <td>UFPR</td>
+        <td>Isadora Martins Vidotti</td>
+      </tr>
+      <tr>
+        <td>sitios_arqueologicos_PR.qmd</td>
+        <td>sitios_arqueologicos</td>
+        <td>Outros Sítios Arqueológicos do Paraná</td>
+        <td>sitios_arqueológicos</td>
+        <td>Sítios arqueológicos presentes no estado do Paraná. Dados vetoriais em formato de polígono.</td>
+        <td>IPHAN</td>
+        <td>Não consta</td>
+      </tr>
+      <tr>
+        <td>suscetibilidade_erosiva.qmd</td>
+        <td>suscetibidade_erosiva</td>
+        <td>Suscetibilidade Erosiva</td>
+        <td>Suscetibilidade erosiva</td>
+        <td>Dado gerado a partir da metodologia de Amaro et al. (2021).</td>
+        <td>UFPR</td>
+        <td>Isadora Martins Vidotti</td>
+      </tr>
+      <tr>
+        <td>uso_do_solo.qmd</td>
+        <td>uso_do_solo</td>
+        <td>Uso do Solo</td>
+        <td>Uso do Solo</td>
+        <td>Uso do solo vetorizado, adquirido a partir do satélite Sentinel2.</td>
+        <td>UFPR</td>
+        <td>Isadora Martins Vidotti</td>
+      </tr>
     </tbody>
   </table>
 </body>
