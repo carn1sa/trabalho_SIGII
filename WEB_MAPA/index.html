@@ -1,244 +1,111 @@
-```html
-<!doctype html>
-<html lang="pt-BR">
+<script>
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+function fecharMetadados(){
 
-    <title>Aspectos do Sambaqui do Rio Branco</title>
+    document.getElementById('descricao-projeto').style.display = 'none';
 
-    <link rel="stylesheet" href="./resources/ol.css">
-    <link rel="stylesheet" href="./resources/fontawesome-all.min.css">
-    <link rel="stylesheet" href="./resources/photon-geocoder-autocomplete.min.css">
-    <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-    <link rel="stylesheet" href="./resources/qgis2web.css">
+    document.getElementById('abrir-metadados').style.display = 'block';
+}
 
-    <style>
-        html,
-        body {
-            background-color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
+function abrirMetadados(){
 
-        html,
-        body,
-        #map {
-            width: 100%;
-            height: 100%;
-        }
+    document.getElementById('descricao-projeto').style.display = 'block';
 
-        .ol-control>* {
-            background-color: #ffffff !important;
-            color: #443c44 !important;
-            border-radius: 0;
-        }
+    document.getElementById('abrir-metadados').style.display = 'none';
+}
 
-        .ol-attribution a,
-        .gcd-gl-input::placeholder,
-        .search-layer-input-search::placeholder {
-            color: #443c44 !important;
-        }
+function atualizarDescricao(nomeCamada){
 
-        .search-layer-input-search {
-            background-color: #ffffff !important;
-        }
+    const texto = document.getElementById('texto-camada');
 
-        .ol-control>*:focus,
-        .ol-control>*:hover {
-            background-color: rgba(255, 255, 255, 0.7) !important;
-        }
+    switch(nomeCamada){
 
-        .ol-control {
-            background-color: rgba(255, 255, 255, .4) !important;
-            padding: 2px !important;
-        }
+        case 'Uso do Solo':
 
-        #descricao-projeto {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            z-index: 9999;
+            texto.innerHTML = `
+                <strong>Camada:</strong> Uso do Solo
+                <br><br>
 
-            width: 340px;
-            padding: 15px;
+                <strong>Resumo</strong><br>
+                Uso do solo vetorizado obtido a partir de imagens Sentinel-2.
+                <br><br>
 
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid #999;
-            border-radius: 8px;
+                <strong>Categoria</strong><br>
+                Mapas Base de Imagens de Cobertura da Terra.
+                <br><br>
 
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-
-            font-family: Arial, sans-serif;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-
-        #descricao-projeto button {
-            float: right;
-            border: none;
-            background: none;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        #titulo-camada {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div id="map">
-        <div id="popup" class="ol-popup">
-            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-            <div id="popup-content"></div>
-        </div>
-    </div>
-
-    <div id="descricao-projeto">
-
-        <button onclick="document.getElementById('descricao-projeto').style.display='none'">
-            ×
-        </button>
-
-        <h3 id="titulo-camada">
-            Aspectos do Sambaqui do Rio Branco
-        </h3>
-
-        <div id="texto-camada">
-            Selecione uma camada para visualizar sua descrição.
-        </div>
-
-    </div>
-
-    <script src="./resources/qgis2web_expressions.js"></script>
-    <script src="./resources/functions.js"></script>
-    <script src="./resources/ol.js"></script>
-    <script src="./resources/ol-layerswitcher.js"></script>
-    <script src="./resources/photon-geocoder-autocomplete.min.js"></script>
-    <script src="./resources/olms.js"></script>
-
-    <script src="./layers/MapadeSolosdoParanEMBRAPA_1.js"></script>
-    <script src="./layers/UsodoSolo_6.js"></script>
-    <script src="./layers/OutrosStiosArqueolgicosdoParan_7.js"></script>
-    <script src="./layers/PontosAmostrais_8.js"></script>
-
-    <script src="./styles/MapadeSolosdoParanEMBRAPA_1_style.js"></script>
-    <script src="./styles/UsodoSolo_6_style.js"></script>
-    <script src="./styles/OutrosStiosArqueolgicosdoParan_7_style.js"></script>
-    <script src="./styles/PontosAmostrais_8_style.js"></script>
-
-    <script src="./layers/layers.js"></script>
-    <script src="./resources/Autolinker.min.js"></script>
-    <script src="./resources/qgis2web.js"></script>
-
-    <script>
-
-        function atualizarDescricao(nomeCamada) {
-
-            const titulo = document.getElementById('titulo-camada');
-            const texto = document.getElementById('texto-camada');
-
-            switch (nomeCamada) {
-
-                case 'Uso do Solo':
-
-                    titulo.innerHTML = 'Uso do Solo';
-
-                    texto.innerHTML = `
-                        <strong>Resumo</strong><br>
-                        Uso do solo vetorizado obtido a partir de imagens do satélite Sentinel-2.
-                        <br><br>
-
-                        <strong>Categoria</strong><br>
-                        Mapas Base de Imagens de Cobertura da Terra.
-                        <br><br>
-
-                        <strong>Responsável</strong><br>
-                        Isadora Martins Vidotti – UFPR.
-                    `;
-                    break;
+                <strong>Responsável</strong><br>
+                Isadora Martins Vidotti – UFPR.
+            `;
+            break;
 
 
-                case 'Suscetibilidade Erosiva':
+        case 'Suscetibilidade Erosiva':
 
-                    titulo.innerHTML = 'Suscetibilidade Erosiva';
+            texto.innerHTML = `
+                <strong>Camada:</strong> Suscetibilidade Erosiva
+                <br><br>
 
-                    texto.innerHTML = `
-                        <strong>Resumo</strong><br>
-                        Dado gerado a partir da metodologia proposta por Amaro et al. (2021).
-                        <br><br>
+                <strong>Resumo</strong><br>
+                Dado gerado a partir da metodologia proposta por Amaro et al. (2021).
+                <br><br>
 
-                        <strong>Categoria</strong><br>
-                        Informação Geocientífica.
-                        <br><br>
+                <strong>Categoria</strong><br>
+                Informação Geocientífica.
+                <br><br>
 
-                        <strong>Sistema de Referência</strong><br>
-                        SIRGAS 2000 / UTM Zona 22S (EPSG:31982).
-                        <br><br>
+                <strong>Sistema de Referência</strong><br>
+                SIRGAS 2000 / UTM Zona 22S (EPSG:31982).
+                <br><br>
 
-                        <strong>Responsável</strong><br>
-                        Isadora Martins Vidotti – UFPR.
-                    `;
-                    break;
-
-
-                case 'Outros Sítios Arqueológicos do Paraná':
-
-                    titulo.innerHTML = 'Sítios Arqueológicos do Paraná';
-
-                    texto.innerHTML = `
-                        <strong>Resumo</strong><br>
-                        Sítios arqueológicos localizados no estado do Paraná,
-                        representados por dados vetoriais em formato poligonal.
-                        <br><br>
-
-                        <strong>Tema</strong><br>
-                        Arqueologia.
-                        <br><br>
-
-                        <strong>Categoria</strong><br>
-                        Informação Geocientífica.
-                        <br><br>
-
-                        <strong>Fonte</strong><br>
-                        Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN).
-                        <br><br>
-
-                        <strong>Direitos</strong><br>
-                        Dados disponibilizados pelo Banco de Dados do Patrimônio Arqueológico do IPHAN.
-                        <br><br>
-
-                        <strong>Sistema de Referência</strong><br>
-                        SIRGAS 2000 (EPSG:4674).
-                    `;
-                    break;
+                <strong>Responsável</strong><br>
+                Isadora Martins Vidotti – UFPR.
+            `;
+            break;
 
 
-                default:
+        case 'Outros Sítios Arqueológicos do Paraná':
 
-                    titulo.innerHTML = 'Aspectos do Sambaqui do Rio Branco';
+            texto.innerHTML = `
+                <strong>Camada:</strong> Sítios Arqueológicos do Paraná
+                <br><br>
 
-                    texto.innerHTML = `
-                        Selecione uma camada no painel lateral para visualizar sua descrição.
-                    `;
-            }
-        }
+                <strong>Resumo</strong><br>
+                Sítios arqueológicos localizados no estado do Paraná, representados por dados vetoriais poligonais.
+                <br><br>
 
-        window.onload = function () {
-            atualizarDescricao('Suscetibilidade Erosiva');
-        };
+                <strong>Tema</strong><br>
+                Arqueologia.
+                <br><br>
 
-    </script>
+                <strong>Categoria</strong><br>
+                Informação Geocientífica.
+                <br><br>
 
-</body>
+                <strong>Fonte</strong><br>
+                Instituto do Patrimônio Histórico e Artístico Nacional (IPHAN).
+                <br><br>
 
-</html>
-```
+                <strong>Direitos</strong><br>
+                Dados disponibilizados pelo Banco de Dados do Patrimônio Arqueológico do IPHAN.
+                <br><br>
+
+                <strong>Sistema de Referência</strong><br>
+                SIRGAS 2000 (EPSG:4674).
+            `;
+            break;
+
+
+        default:
+
+            texto.innerHTML = `
+                Selecione uma camada no painel lateral para visualizar seus metadados.
+            `;
+    }
+}
+
+window.onload = function(){
+    atualizarDescricao('Suscetibilidade Erosiva');
+};
+
+</script>
