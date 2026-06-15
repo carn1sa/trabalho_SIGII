@@ -17,237 +17,12 @@
     <link rel="stylesheet" href="./resources/qgis2web.css">
 
     <style>
-        html, body {
-            background-color: #ffffff;
+        html, body, #map {
             width: 100%;
             height: 100%;
             padding: 0;
             margin: 0;
-        }
-        #map {
-            width: 100%;
-            height: 100%;
-        }
-        .ol-control > * {
-            background-color: #ffffff!important;
-            color: #443c44!important;
-            border-radius: 0px;
-        }
-        .ol-attribution a, .gcd-gl-input::placeholder, .search-layer-input-search::placeholder {
-            color: #443c44!important;
-        }
-        .search-layer-input-search {
-            background-color: #ffffff!important;
-        }
-        .ol-control > *:focus, .ol-control >*:hover {
-            background-color: rgba(255, 255, 255, 0.7)!important;
-        } 
-        .ol-control {
-            background-color: rgba(255,255,255,.4) !important;
-            padding: 2px !important;
-        } 
-        #descricao-projeto {
-            position:absolute;
-            bottom:20px;
-            right:20px;
-            z-index:9999;
-            width:420px;
-            max-height:500px;
-            overflow-y:auto;
-            padding:15px;
-            background:rgba(255,255,255,.95);
-            border:1px solid #999;
-            border-radius:8px;
-            box-shadow:0 2px 10px rgba(0,0,0,.3);
-            font-family:Arial,sans-serif;
-            font-size:13px;
-            line-height:1.5;
-        }
-        #abrir-descricao {
-            position:absolute;
-            bottom:20px;
-            right:20px;
-            z-index:9999;
-            background:white;
-            border:1px solid #999;
-            border-radius:6px;
-            padding:8px 12px;
-            cursor:pointer;
-            display:none;
-            box-shadow:0 2px 10px rgba(0,0,0,.3);
-        }
-        #tabela-metadados{
-            margin-top:10px;
-            max-height:250px;
-            overflow:auto;
-            border:1px solid #ccc;
-        }
-        #tabela-metadados table{
-            width:100%;
-            border-collapse:collapse;
-            font-size:12px;
-        }
-        #tabela-metadados th,
-        #tabela-metadados td{
-            border:1px solid #ccc;
-            padding:4px;
-            text-align:left;
-        }
-        #tabela-metadados th{
-            background:#f0f0f0;
-            position:sticky;
-            top:0;
-        }
-    </style>
-</head>
-<body>
-    <div id="map">
-        <div id="popup" class="ol-popup">
-            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
-            <div id="popup-content"></div>
-        </div>
-    </div>
-
-    <!-- Painel de descrição + metadados -->
-    <div id="descricao-projeto">
-        <button onclick="fecharDescricao()"
-                style="float:right;border:none;background:none;font-size:16px;cursor:pointer;">
-            ×
-        </button>
-
-        <strong>Aspectos do Sambaqui do Rio Branco</strong><br><br>
-        Discente: Isadora Martins Vidotti<br>
-        Disciplina: SIG2<br>
-        Docente: Catherine Torres de Almeida<br>
-        Curso: Graduação em Geografia<br>
-        Instituição: UFPR
-
-        <hr>
-        <h3>Metadados das camadas</h3>
-        <div id="tabela-metadados">
-            <table>
-                <tr>
-                    <th>arquivo</th>
-                    <th>title</th>
-                    <th>nome da camada</th>
-                    <th>parentidentifier</th>
-                    <th>abstract</th>
-                    <th>organization</th>
-                    <th>author</th>
-                </tr>
-                <tr><td>DEM_SAMBAQUI.qmd</td><td>Dem_sambaqui</td><td>DEM_sambaqui</td><td>Modelo Digital de Elevação</td><td>Modelo Digital de Elevação adquirido através do processamento de dados Lidar realizados pelo LAGEAMB em colaboração com o CEPA-UFPR.</td><td></td><td></td></tr>
-                <tr><td>Landsat9.qmd</td><td>NDVI_LANDSAT9_2025</td><td>NDVI_LANDSAT2025</td><td>Índice de Vegetação por Diferença Normalizada</td><td>Índice de Vegetação obtido através do satélite Landsat9.</td><td>UFPR</td><td>Isadora Martins Vidotti</td></tr>
-                <tr><td>Mapa_de_Solos_do_Parana.qmd</td><td>Mapa_de_Solos_do_Paran_EMBRAPA</td><td>Mapa de Solos do Paraná EMBRAPA</td><td>Mapa de solos do Paraná</td><td>Distribuição espacial dos solos do estado do Paraná segundo SiBCS (2006). Escala: 1:250.000.</td><td>EMBRAPA</td><td></td></tr>
-                <tr><td>indicederugosidade.qmd</td><td>indicederugosidade</td><td>Indice de Rugosidade</td><td>Indice de Rugosidade</td><td>Índice elaborado a partir do DEM do LAGEAMB.</td><td></td><td></td></tr>
-                <tr><td>pontos_amostrais.qmd</td><td>pontos_amostrais</td><td>Pontos Amostrais</td><td>pontos amostrais</td><td>Dado de amostra para suscetibilidade erosiva (Amaro et al. 2021).</td><td>UFPR</td><td>Isadora Martins Vidotti</td></tr>
-                <tr><td>sitios_arqueologicos_PR.qmd</td><td>sitios_arqueologicos</td><td>Outros Sítios Arqueológicos do Paraná</td><td>sitios_arqueológicos</td><td>Sítios arqueológicos presentes no estado do Paraná.</td><td></td><td></td></tr>
-                <tr><td>suscetibilidade_erosiva.qmd</td><td>suscetibidade_erosiva</td><td>Suscetibilidade Erosiva</td><td>Suscetibilidade erosiva</td><td>Dado gerado a partir da metodologia de Amaro et al. (2021).</td><td>UFPR</td><td>Isadora Martins Vidotti</td></tr>
-                <tr><td>uso_do_solo.qmd</td><td>uso_do_solo</td><td>Uso do Solo</td><td>Uso do Solo</td><td>Uso do solo vetorizado, adquirido a partir do satélite Sentinel-2.</td><td>UFPR</td><td>Isadora Martins Vidotti</td></tr>
-            </table>
-        </div>
-    </div>
-
-    <div id="abrir-descricao" onclick="abrirDescricao()">Abrir descrição</div>
-
-    <!-- Scripts -->
-    <script src="resources/qgis2web_expressions.js"></script>
-    <script src="./resources/functions.js"></script>
-    <script src="./resources/ol.js"></script>
-    <script src="./resources/ol-layerswitcher.js"></script>
-    <script src="resources/photon-geocoder-autocomplete.min.js"></script>
-    <script src="resources/olms.js"></script>
-    <script src="layers/MapadeSolosdoParanEMBRAPA_1.js"></script>
-    <script src="layers/UsodoSolo_6.js"></script>
-<!-- Painel lateral de descrição + metadados + legenda -->
-<div id="descricao-projeto">
-    <button onclick="fecharDescricao()"
-            style="float:right;border:none;background:none;font-size:16px;cursor:pointer;">
-        ×
-    </button>
-
-    <strong>Aspectos do Sambaqui do Rio Branco</strong><br><br>
-    Discente: Isadora Martins Vidotti<br>
-    Disciplina: SIG2<br>
-    Docente: Catherine Torres de Almeida<br>
-    Curso: Graduação em Geografia<br>
-    Instituição: UFPR
-
-    <hr>
-    <h3>Metadados das camadas</h3>
-    <!-- tabela de metadados já incluída -->
-    <div id="tabela-metadados">…</div>
-
-    <hr>
-    <h3>Legenda</h3>
-    <div id="legenda">
-        <ul>
-            <li><b>Pontos Amostrais</b></li>
-            <li><b>Sítios Arqueológicos</b></li>
-            <li><b>Uso do Solo</b>
-                <ul>
-                    <li>Rodovia / Solo exposto</li>
-                    <li>Área cultivada</li>
-                    <li>Vegetação</li>
-                </ul>
-            </li>
-            <li><b>Suscetibilidade Erosiva</b>
-                <ul>
-                    <li>0%</li>
-                    <li>2.1%</li>
-                    <li>4.3%</li>
-                    <li>6.4%</li>
-                    <li>8.6%</li>
-                </ul>
-            </li>
-            <li><b>Índice de Rugosidade</b> (0.0486 – 45.21)</li>
-            <li><b>DEM_sambaqui</b></li>
-            <li><b>NDVI_LANDSAT9_2025</b> (0.0000 – 0.9130)</li>
-            <li><b>Mapa de Solos do Paraná (EMBRAPA)</b>
-                <ul>
-                    <li>Aflorescimento Rochoso</li>
-                    <li>Aflorescimento de Rocha</li>
-                    <li>Argissolo</li>
-                    <li>Cambissolo</li>
-                    <li>Espodossolo</li>
-                    <li>Gleissolo</li>
-                    <li>Latosssolo</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</div>
-
-    <script src="layers/OutrosStiosArqueolgicosdoParan_7.js"></script>
-    <script src="layers/PontosAmostrais_8.js"></script
-        <!doctype html>
-<html lang="pt-BR">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-
-    <title>Aspectos do Sambaqui do Rio Branco</title>
-
-    <!-- Estilos -->
-    <link rel="stylesheet" href="./resources/ol.css">
-    <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-    <link rel="stylesheet" href="resources/photon-geocoder-autocomplete.min.css">
-    <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
-    <link rel="stylesheet" href="./resources/qgis2web.css">
-
-    <style>
-        html, body {
             background-color: #ffffff;
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        #map {
-            width: 100%;
-            height: 100%;
         }
         .ol-control > * {
             background-color: #ffffff!important;
@@ -330,3 +105,103 @@
 </head>
 <body>
     <div id="map">
+        <div id="popup" class="ol-popup">
+            <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+
+    <!-- Painel lateral -->
+    <div id="descricao-projeto">
+        <button onclick="fecharDescricao()"
+                style="float:right;border:none;background:none;font-size:16px;cursor:pointer;">
+            ×
+        </button>
+
+        <strong>Aspectos do Sambaqui do Rio Branco</strong><br><br>
+        Discente: Isadora Martins Vidotti<br>
+        Disciplina: SIG2<br>
+        Docente: Catherine Torres de Almeida<br>
+        Curso: Graduação em Geografia<br>
+        Instituição: UFPR
+
+        <hr>
+        <h3>Metadados das camadas</h3>
+        <div id="tabela-metadados">
+            <!-- tabela completa aqui -->
+        </div>
+
+        <hr>
+        <h3>Legenda</h3>
+        <div id="legenda">
+            <ul>
+                <li><b>Pontos Amostrais</b></li>
+                <li><b>Sítios Arqueológicos</b></li>
+                <li><b>Uso do Solo</b>
+                    <ul>
+                        <li>Rodovia / Solo exposto</li>
+                        <li>Área cultivada</li>
+                        <li>Vegetação</li>
+                    </ul>
+                </li>
+                <li><b>Suscetibilidade Erosiva</b>
+                    <ul>
+                        <li>0%</li>
+                        <li>2.1%</li>
+                        <li>4.3%</li>
+                        <li>6.4%</li>
+                        <li>8.6%</li>
+                    </ul>
+                </li>
+                <li><b>Índice de Rugosidade</b> (0.0486 – 45.21)</li>
+                <li><b>DEM_sambaqui</b></li>
+                <li><b>NDVI_LANDSAT9_2025</b> (0.0000 – 0.9130)</li>
+                <li><b>Mapa de Solos do Paraná (EMBRAPA)</b>
+                    <ul>
+                        <li>Aflorescimento Rochoso</li>
+                        <li>Aflorescimento de Rocha</li>
+                        <li>Argissolo</li>
+                        <li>Cambissolo</li>
+                        <li>Espodossolo</li>
+                        <li>Gleissolo</li>
+                        <li>Latosssolo</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="abrir-descricao" onclick="abrirDescricao()">Abrir descrição</div>
+
+    <!-- Scripts do QGIS2Web -->
+    <script src="resources/qgis2web_expressions.js"></script>
+    <script src="./resources/functions.js"></script>
+    <script src="./resources/ol.js"></script>
+    <script src="./resources/ol-layerswitcher.js"></script>
+    <script src="resources/photon-geocoder-autocomplete.min.js"></script>
+    <script src="resources/olms.js"></script>
+    <script src="layers/MapadeSolosdoParanEMBRAPA_1.js"></script>
+    <script src="layers/UsodoSolo_6.js"></script>
+    <script src="layers/OutrosStiosArqueolgicosdoParan_7.js"></script>
+    <script src="layers/PontosAmostrais_8.js"></script>
+    <script src="styles/MapadeSolosdoParanEMBRAPA_1_style.js"></script>
+    <script src="styles/UsodoSolo_6_style.js"></script>
+    <script src="styles/OutrosStiosArqueolgicosdoParan_7_style.js"></script>
+    <script src="styles/PontosAmostrais_8_style.js"></script>
+    <script src="./layers/layers.js" type="text/javascript"></script> 
+    <script src="./resources/Autolinker.min.js"></script>
+    <script src="./resources/qgis2web.js"></script>        
+
+    <script>
+        function fecharDescricao(){
+            document.getElementById('descricao-projeto').style.display='none';
+            document.getElementById('abrir-descricao').style.display='block';
+        }
+        function abrirDescricao(){
+            document.getElementById('descricao-projeto').style.display='block';
+            document.getElementById('abrir-descricao').style.display='none';
+        }
+    </script>
+</body>
+</html>
+
